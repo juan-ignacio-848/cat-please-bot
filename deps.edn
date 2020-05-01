@@ -1,0 +1,14 @@
+{:deps    {org.clojure/clojure {:mvn/version "1.10.1"}
+           morse               {:mvn/version "0.4.3"}
+           cheshire            {:mvn/version "5.10.0"}
+           environ             {:mvn/version "1.1.0"}}
+ :aliases {
+           ;; testing and debugging tools:
+           :test   {:extra-paths ["test"]}
+           ;; - see https://github.com/cognitect-labs/test-runner
+           ;; - run your tests: clj -A:test:runner
+           :runner {:extra-deps {com.cognitect/test-runner
+                                 {:git/url "https://github.com/cognitect-labs/test-runner"
+                                  :sha     "3cb0a9daf1cb746259dc8309b218f9211ad3b33b"}}
+                    :main-opts  ["-m" "cognitect.test-runner"]}
+           :comp   {:extra-deps {compliment {:mvn/version "RELEASE"}}}}}
